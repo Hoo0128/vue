@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+ <html lang="en"> 
+   <head> 
+ <meta charset="UTF-8"> 
+ <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ <title>Document</title> 
+ </head> 
+   <body> 
+ <script> 
+ // 3. this 指向 
+ function fn() { 
+ console.log(this); // this = window 
+ } 
+ const obj = { 
+ name: 'test', 
+ a() { 
+ console.log(this.a); // this = obj 
+ setTimeout(function () { 
+ console.log(this.a); // this = undefined 
+ }, 1000); 
+ }, 
+ b() { 
+ console.log(this); // this = obj 
+ fn(); 
+ }, 
+ }; 
+ obj.a(); 
+ obj.b(); 
+ </script> 
+ </body> 
+   </html> 
