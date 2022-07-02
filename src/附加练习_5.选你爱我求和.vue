@@ -8,7 +8,7 @@
 </template>
 
 <script>
-export default {  
+export default {
   data() {
     return {
       arr: [9, 15, 19, 25, 29, 31, 48, 57, 62, 79, 87],

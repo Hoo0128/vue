@@ -23,16 +23,7 @@ export default {
   },
   methods: {
     change() {
-      // this.obj.a = 10;
-      // console.log(this.obj);
-      // 解决方法
-      // this.obj = {
-      //   b: 10,
-      //   c: 12,
-      //   a: 10,
-      // };
-      // console.log(this.obj);
-      // 只要是在这个点击之后 再去修改a的值，可以去发视图的更新
+ 
       this.$set(this.obj, "a", 10);
       console.log("===", this.obj);
     },
