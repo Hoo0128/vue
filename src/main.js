@@ -2,6 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 
 Vue.config.productionTip = false
+
+import axios from 'axios';
+axios.defaults.baseURL = 'http://www.liulongbin.top:3006';
+Vue.prototype.$axios = axios;
+
 import "./assets/styles/base.css";
 import "./assets/styles/index.css";
 
