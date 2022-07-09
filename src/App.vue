@@ -1,28 +1,61 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div class="footer_wrap">
+      
+    </div>
+    <div class="top">
+      <!-- 7. 设置挂载点-当url的hash值路径切换, 显示规则里对应的组件到这 -->
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  methods: {
+    btn(val, name) {
+      this.$router.push({
+        path: val,
+        name: name,
+        query: {
+          id: 'hu',
+          age: 18,
+        },
+    
+      });
+    },
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style scoped>
+.footer_wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  width: 100%;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #333;
+  color: #ccc;
 }
+.footer_wrap span {
+  flex: 1;
+  text-decoration: none;
+  padding: 20px 0;
+  line-height: 20px;
+  background-color: #333;
+  color: #ccc;
+  border: 1px solid black;
+}
+.footer_wrap span:hover {
+  background-color: #555;
+}
+.top {
+  padding-top: 62px;
+}
+/* .footer_wrap .router-link-active{
+ color: white;
+  background: black;
+} */
 </style>
